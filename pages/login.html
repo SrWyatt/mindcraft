@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="icon" type="image/png" href="https://unsisterly-collar.000webhostapp.com/apk/icon2.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Calibri, sans-serif;
+            background-image: url('https://unsisterly-collar.000webhostapp.com/apk/bg.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        .container {
+            width: 320px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: left;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .button {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 10px;
+            text-align: center;
+            width: 140px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        input[type="text"], input[type="password"] {
+            border: none;
+            border-bottom: 1px solid #aaa;
+            width: calc(100% - 10px);
+            margin-bottom: 10px;
+            background-color: transparent;
+            padding: 5px;
+            outline: none;
+        }
+        #imagen {
+            position: absolute;
+            top: -50px;
+            left: 50%; 
+            transform: translateX(-50%);
+            width: 200px; 
+            height: auto; 
+        }
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="imagen" src="https://unsisterly-collar.000webhostapp.com/apk/png.png" alt="Imagen PNG">
+        <div class="login-container">
+            <h2>Usuario</h2>
+            <input id="username" type="text" placeholder="Ingrese su usuario o correo" style="text-align: left;" autofocus maxlength="20" size="20"> 
+            <h2>Contraseña</h2>
+            <input id="password" type="password" placeholder="Ingrese su contraseña" style="text-align: left;" maxlength="20" size="20"> 
+            <div id="error-message" class="error-message" style="display: none;">Usuario o contraseña incorrecta.</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="button-container">
+            <div class="button">
+                <h3>Iniciar sesión</h3>
+            </div>
+            <div class="button">
+                <h3>Registro</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
