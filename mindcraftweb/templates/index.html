@@ -1,30 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Mindcraft{% endblock %}
+
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="icon" type="image/png" href="https://unsisterly-collar.000webhostapp.com/apk/icon2.png">
-
- <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
-</head>
-<body>
-    <!-- Barra de navegación -->
-    <div class="navbar">
-        <img src="https://unsisterly-collar.000webhostapp.com/apk/logo.png" alt="Logo">
-        <div class="navbar-links">
-            <div class="navbar-link-box">
-                <a href=""{% url 'login' %}"" class="navbar-link">Iniciar sesión</a>
-            </div>
-            <div class="navbar-link-box">
-                <a href="pages/registro.html" class="navbar-link">Registrarme</a>
-                <!--todas las paginas estaran en  la carpeta PAGES-->
-            </div>
-            <div class="invisible-spacer"></div>
-        </div>
-    </div>
-
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
     <!-- Contenedor principal -->
     <div class="container">
         <!-- Contenido principal -->
@@ -100,5 +80,4 @@
         <!--<div><p> </p></div>-->
         <div><p class="footer-txt">Copyright © 2024. Mindcraft, All Rights Reserved.</p></div>
     </footer>
-</body>
-</html>
+{% endblock %}

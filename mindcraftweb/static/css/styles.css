@@ -1,0 +1,84 @@
+.navbar {
+    background-color: white;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar img {
+    width: 170px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar-link-box {
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.navbar-link {
+    color: #564387;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.navbar-link-box:hover {
+    background-color: #564387;
+}
+
+.navbar-link-box:hover .navbar-link {
+    color: #ffffff;
+}
+
+.invisible-spacer {
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 12%; /* Ajuste del margen para que la barra se maneje por width */
+    position: relative;
+    display: flex; /* Agregamos display flex para que los elementos internos se alineen correctamente */
+}
+
+.search-input {
+    width: 100%; /* Ancho del input */
+    padding: 10px 10px;
+    border: 2px solid #564387;
+    border-radius: 30px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #7d62a8;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Posicionamos el icono a 10px del borde derecho */
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.search-icon img {
+    width: 20px;
+    height: auto;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mindcraft{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://unsisterly-collar.000webhostapp.com/apk/logo.png" alt="Logo">
+        {% if user.is_authenticated %}
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Buscar...">
+            <div class="search-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/2319/2319177.png" alt="Search Icon">
+            </div>
+        </div>
+        <div class="navbar-links">
+            <div class="navbar-link-box">
+                <a href="#" class="navbar-link">{{ user.username }}</a>
+            </div>
+        </div>
+        {% else %}
+        <div class="navbar-links">
+            <div class="navbar-link-box">
+                <a href="{% url 'login' %}" class="navbar-link">Iniciar sesión</a>
+            </div>
+            <div class="navbar-link-box">
+                <a href="{% url 'register' %}" class="navbar-link">Registrarme</a>
+                <!--todas las paginas estaran en la carpeta PAGES-->
+            </div>
+        </div>
+        {% endif %}
+        <div class="invisible-spacer"></div>
+    </div>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="notification {{ message.tags }}">
+        {{ message }}
+
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-{% load static%}
-<!--esta pagina se manda a la mierda y se crea
-el formulario aqui mismo -->
+{% extends 'base.html' %}
 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[WIP]</title>
-    <link rel="icon" type="image/png" href="https://unsisterly-collar.000webhostapp.com/apk/icon2.png">
+{% block title %}Mindcraft{% endblock %}
+
+{% block content %}
+{% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
 </head>
 <body>
@@ -24,3 +19,4 @@ el formulario aqui mismo -->
     </div>
 </body>
 </html>
+{% endblock %}
