@@ -1,3 +1,4 @@
+<!-- mindcraftweb/templates/mindcraftweb/login.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +15,7 @@
             background-position: center;
             display: flex;
             flex-direction: column;
-            align-items: center; 
+            align-items: center;
             justify-content: center;
             height: 100vh;
             position: relative;
@@ -70,10 +71,10 @@
         #imagen {
             position: absolute;
             top: -50px;
-            left: 50%; 
+            left: 50%;
             transform: translateX(-50%);
-            width: 200px; 
-            height: auto; 
+            width: 200px;
+            height: auto;
         }
         .error-message {
             color: red;
@@ -85,21 +86,28 @@
     <div class="container">
         <img id="imagen" src="https://unsisterly-collar.000webhostapp.com/apk/png.png" alt="Imagen PNG">
         <div class="login-container">
-            <h2>Usuario</h2>
-            <input id="username" type="text" placeholder="Ingrese su usuario o correo" style="text-align: left;" autofocus maxlength="20" size="20"> 
-            <h2>Contraseña</h2>
-            <input id="password" type="password" placeholder="Ingrese su contraseña" style="text-align: left;" maxlength="20" size="20"> 
-            <div id="error-message" class="error-message" style="display: none;">Usuario o contraseña incorrecta.</div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="button-container">
-            <div class="button">
-                <h3>Iniciar sesión</h3>
-            </div>
-            <div class="button">
-                <h3>Registro</h3>
-            </div>
+            <form method="post">
+                {% csrf_token %}
+                <h2>Usuario</h2>
+                <input id="username" name="username" type="text" placeholder="Ingrese su usuario o correo" style="text-align: left;" autofocus maxlength="20" size="20">
+                <h2>Contraseña</h2>
+                <input id="password" name="password" type="password" placeholder="Ingrese su contraseña" style="text-align: left;" maxlength="20" size="20">
+                {% if messages %}
+                    <div id="error-message" class="error-message">
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <div class="button-container">
+                    <button type="submit" class="button">
+                        <h3>Iniciar sesión</h3>
+                    </button>
+                    <div class="button">
+                        <h3>Registro</h3>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </body>

@@ -119,7 +119,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+# Para proyectos más grandes, puedes especificar una ubicación donde Django recolectará todos los archivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Directorios adicionales donde Django buscará archivos estáticos
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'mindcraftweb/static'),)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
