@@ -19,7 +19,7 @@
         </div>
         <div class="navbar-links">
             <div class="navbar-link-box">
-                <a href="#" class="navbar-link">{{ user.username }}</a>
+                <a href="{% url 'logout' %}" class="navbar-link">{{ user.username }}</a>
             </div>
         </div>
         {% else %}
@@ -46,5 +46,7 @@
     {% endif %}
     {% block content %}
     {% endblock %}
+
+    
 </body>
 </html>

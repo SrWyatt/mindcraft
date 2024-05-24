@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Mindcraft{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/feed.css' %}">
+<div class="container">
+    <h2 style="color: #564387;">Feed</h2>
+    <div class="feed-item">
+        <h3>Título del Artículo 1</h3>
+        <p class="date">Publicado el 22 de mayo de 2024</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim, sit amet semper arcu.</p>
+    </div>
+    <div class="feed-item">
+        <h3>Título del Artículo 2</h3>
+        <p class="date">Publicado el 21 de mayo de 2024</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim, sit amet semper arcu.</p>
+    </div>
+    <div class="feed-item">
+        <h3>Título del Artículo 3</h3>
+        <p class="date">Publicado el 20 de mayo de 2024</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim, sit amet semper arcu.</p>
+    </div>
+</div>
+{% endblock %}

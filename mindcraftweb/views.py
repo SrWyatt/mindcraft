@@ -8,6 +8,7 @@ from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login
+from .forms import UserRegisterForm
 
 
 
@@ -17,7 +18,11 @@ from django.contrib.auth import login as auth_login
 
 def index (request):
     return render(request, "index.html")
-#vista del login
+
+def feeed (request):
+    return render(request, "feed.html")
+
+
 def login_view(request):
     if request.method == "POST":
         username = request.POST.get('username')
@@ -25,7 +30,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('index')  # Cambia 'index' por la URL que quieras redirigir después del login
+            return redirect('feed')
         else:
             messages.error(request, 'Usuario o contraseña incorrecta.')
     return render(request, 'login.html')
@@ -33,18 +38,23 @@ def login_view(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
             auth_login(request, user)
             messages.success(request, '¡Registro exitoso! Te has registrado correctamente.')
-            return redirect('index')
+            return redirect('feed')
         else:
             messages.error(request, '¡Error de registro! Por favor, corrige los errores a continuación.')
             context = {'form': form}
             return render(request, 'registro.html', context)
     else:
-        form = UserCreationForm()
+        form = UserRegisterForm()
         context = {'form': form}
         return render(request, 'registro.html', context)
     
+
+def logout_view(request):
+    # Vista para cerrar la sesión del usuario.
+    logout(request)
+    return redirect('index')
