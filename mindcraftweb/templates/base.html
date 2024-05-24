@@ -6,6 +6,7 @@
     <title>{% block title %}Mindcraft{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="https://unsisterly-collar.000webhostapp.com/apk/icon2.png" type="image/png">
 </head>
 <body>
     <div class="navbar">
@@ -21,6 +22,7 @@
             <div class="navbar-link-box">
                 <a href="{% url 'logout' %}" class="navbar-link">{{ user.username }}</a>
             </div>
+            <div class="invisible-spacer"></div><div class="invisible-spacer"></div>
         </div>
         {% else %}
         <div class="navbar-links">
@@ -30,10 +32,15 @@
             <div class="navbar-link-box">
                 <a href="{% url 'register' %}" class="navbar-link">Registrarme</a>
                 <!--todas las paginas estaran en la carpeta PAGES-->
+                <div class="invisible-spacer"></div>
             </div>
+            <div class="invisible-spacer"></div>
+
+            
+                
         </div>
         {% endif %}
-        <div class="invisible-spacer"></div>
+
     </div>
 
     {% if messages %}

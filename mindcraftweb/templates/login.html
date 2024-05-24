@@ -38,11 +38,11 @@
         .button-container {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
         .button {
             background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
+            border-radius: 7px;
             padding: 10px;
             text-align: center;
             width: 140px;
@@ -52,12 +52,16 @@
             margin-bottom: 5px;
             height: 35px;
             display: flex;
+            outline: none;
+            color: rgb(76, 59, 121);
+            border: 0;
             justify-content: center;
             align-items: center;
         }
         .button:hover {
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgb(108, 95, 143);
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            color: rgb(255, 255, 255);
         }
         input[type="text"], input[type="password"] {
             border: none;
@@ -99,13 +103,19 @@
                         {% endfor %}
                     </div>
                 {% endif %}
+                    
+                <p> <!-- este párrafo solo es estético y no se ve dentro del diseño-->
+
                 <div class="button-container">
+
                     <button type="submit" class="button">
                         <h3>Iniciar sesión</h3>
                     </button>
-                    <div class="button">
-                        <h3>Registro</h3>
-                    </div>
+                    
+                    <button class="button">
+                        <h3>Registrarme</h3>
+                    </button>
+                    
                 </div>
             </form>
         </div>

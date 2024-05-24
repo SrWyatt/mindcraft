@@ -2,7 +2,7 @@
 
 
 {% block content %}
-{% block title %}Mindcraft|Registro{% endblock %}
+{% block title %}{% endblock %}
 {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
 </head>
@@ -10,7 +10,7 @@
     <div class="container">
         <form class="form" method="post">
             <div class="container">
-                <h2>Registro</h2>
+                <h2>Crea tu cuenta.</h2>
                 <form method="post">
                     {% csrf_token %}
                     
