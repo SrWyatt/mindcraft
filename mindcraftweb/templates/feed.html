@@ -6,29 +6,94 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/feed.css' %}">
-
-
-<div class="button"> <!-- La clase Button es opcional, la usé porque me parecía mejor con las modificaciones que hice -->
+<br>
+<br>
+<br>
 <div class="container">
-    <h2 style="color: #564387;">Feed</h2>
-    <div class="feed-item">
-        <h3>Título del Artículo 1</h3>
-        <p class="date">Publicado el 22 de mayo de 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim, sit amet semper arcu.</p>
+    <h1>Maestros</h1>
+    <div class="teacher-card">
+        <img src="https://toplearning.org/wp-content/uploads/2022/08/ingle%CC%81s.jpg" alt="English">
+        <h3>Ingles</h3>
+        <a href="url_a_docentes" class="btn-open">Ver docentes</a>
     </div>
-    <div class="feed-item">
-        <h3>Título del Artículo 2</h3>
-        <p class="date">Publicado el 21 de mayo de 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim, sit amet semper arcu.</p>
+    <div class="teacher-card">
+        <img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2018/04/matematicas-978x652.jpg" alt="Math">
+        <h3>Matematicas</h3>
+        <a href="url_a_docentes" class="btn-open">Ver docentes</a>
     </div>
-    <div class="feed-item">
-        <h3>Título del Artículo 3</h3>
-        <p class="date">Publicado el 20 de mayo de 2024</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim, sit amet semper arcu.</p>
+    <div class="teacher-card">
+        <img src="https://s1.significados.com/foto/ciencia-og.jpg" alt="Science">
+        <h3>Ciencias</h3>
+        <a href="url_a_docentes" class="btn-open">Ver docentes</a>
     </div>
-
-    
+    <div class="teacher-card">
+        <img src="https://ethic.es/wp-content/uploads/2022/12/vangog-2-1280x768.jpg" alt="Art">
+        <h3>Arte</h3>
+        <a href="url_a_docentes" class="btn-open">Ver docentes</a>
+    </div>
+    <div class="teacher-card">
+        <img src="https://allgo.org/wp-content/uploads/Cover_8.25Blog.png" alt="Music">
+        <h3>Musica</h3>
+        <a href="url_a_docentes" class="btn-open">Ver docentes</a>
+    </div>
 </div>
+<br>
+<br><br>
+<br>
+<footer>
+    <div style="margin-left: 20px; margin-right: 20px;">
+        <table class="footer-table" style="text-align: left; width: 100%;">
+            <tr>
+                <!-- Columna izquierda del footer -->
+                <td style="vertical-align: top; padding-right: 50px;">
+                    <!-- Titulo de la primera columna -->
+                    <h3 style="margin-bottom: 15px;">Contactos</h3>
+                    <!-- Texto de la primera columna -->
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">Calle Falsa, #123. C.A</a></p>
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">+503 1234 5678</a></p>
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">+1 234 567 8910</a></p>
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">correofalso@mind.edu.sv</a></p>
+                </td>
+                <!-- Columna del centro -->
+                <td style="vertical-align: top; padding-right: 50px;">
+                    <!-- Titulo de la segunda columna -->
+                    <h3 style="margin-bottom: 15px;">About us</h3>
+                    <!-- Elementos de la segunda columna -->
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">FAQs</a></p>
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">Servicios</a></p>
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">Inscripciones</a></p>
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">Términos y condiciones</a></p>
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">Reportar problema</a></p>
+                </td>
+                <!-- 3er columna del footer -->
+                <td style="vertical-align: top; padding-left: 50px;">
+                    <!-- Titulo de la columna -->
+                    <h3 style="margin-bottom: 15px;">Información</h3>
+                    <!-- Texto de la tercera columna -->
 
+                    <!-- cambiar href="#" por href="enlace a pagina" -->
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">Registrarme como docente</a></p> 
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">Trabaja con nosotros</a></p>
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">Asesoría general</a></p>
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">Afíliate</a></p>
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">Patrocinios</a></p>
+                    <p><span class="circle"></span> <a href="#" class="footer-txt">Recursos</a></p>
+                </td>
+            </tr>
+        </table>
+    </div>
 
+    <div><p> </p></div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="#"><img id="media1" src="https://unsisterly-collar.000webhostapp.com/apk/png.png" alt="Media" style="max-width: 10%; margin: auto;"></a>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="#"><img id="media2" src="https://unsisterly-collar.000webhostapp.com/apk/media2.png" alt="Media" style="max-width: 8%; margin: auto;"></a>
+    </div>
+    <!-- divisor opcional-->
+    <!--<div><p> </p></div>-->
+    <div><p class="footer-txt">Copyright © 2024. Mindcraft, All Rights Reserved.</p></div>
+</footer>
 {% endblock %}

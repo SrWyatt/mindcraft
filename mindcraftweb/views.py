@@ -9,6 +9,8 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login
 from .forms import UserRegisterForm
+from .models import Profile
+from .forms import ProfileUpdateForm
 
 
 
@@ -19,8 +21,7 @@ from .forms import UserRegisterForm
 def index (request):
     return render(request, "index.html")
 
-def feeed (request):
-    return render(request, "feed.html")
+
 
 
 def login_view(request):
@@ -58,3 +59,22 @@ def logout_view(request):
     # Vista para cerrar la sesión del usuario.
     logout(request)
     return redirect('index')
+
+def feeed (request):
+    users = User.objects.all()  # Asumiendo que tienes una lista de usuarios
+    return render(request, 'feed.html', {'users': users})
+
+@login_required
+def profile_view(request, username):
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(Profile, user=user)
+
+    if request.method == 'POST':
+        form = ProfileUpdateForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile', username=user.username)
+    else:
+        form = ProfileUpdateForm(instance=profile)
+
+    return render(request, 'profile.html', {'profile': profile, 'form': form})

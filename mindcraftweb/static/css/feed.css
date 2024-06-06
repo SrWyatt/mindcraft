@@ -1,43 +1,145 @@
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
+    padding: 0;
 }
+
+
 
 .container {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 800px;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+.teacher-card {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
 }
 
-.feed-item {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+.teacher-card img {
+    max-width: 200px; /* Tamaño máximo de las imágenes */
+    height: auto;
+}
+
+
+.teacher-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.teacher-card button {
+    width: 100px;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.btn-open,
+.btn-closed {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #564387; /* Color de fondo azul */
+    color: #ffffff; /* Color de texto blanco */
+    text-decoration: none; /* Elimina el subrayado */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Añade bordes redondeados */
+    font-size: 16px;
+    transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+}
+
+.btn-open:hover,
+.btn-closed:hover {
+    background-color: #0056b3; /* Color de fondo azul más oscuro al pasar el ratón */
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #171718;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    flex-shrink: 0;
+    border-top: 1px solid #564387; /* Línea superior */
+}
+
+/* Estilos del texto */
+.text-container {
+    width: 50%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 15px; 
 }
 
-.feed-item h3 {
-    color: #564387;
-    margin-top: 0;
+
+.text-container h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.feed-item p {
-    color: #333;
+.text-container p {
+    font-size: 20px;
+    margin: 0 0 10px;
 }
 
-.feed-item .date {
-    font-size: 12px;
-    color: #999;
+/*Estilos para la columna del footer */
+.left-column {
+    width: 200px;
+    margin-left: 20px;
+    padding-top: 20px;
+}
+
+/* circulo indicador */
+.circle {
+    width: 15px;
+    height: 15px;
+    background-color: #564387;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px; /* Espacio entre el texto */
+    vertical-align: middle;
+}
+
+/* Estilos para las filas del footer */
+.footer-row {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 10px; 
+    text-align: start; 
+}
+
+/* Estilos para la tabla del footer */
+.footer-table {
+width: 100%;
+table-layout: fixed;
+display: flex; 
+align-items: center; 
+}
+
+/* Estilos para las columnas del footer */
+.left-column, .right-column {
+width: 50%;
+}
+
+/* Estilos para los títulos del footer */
+.footer-title {
+font-size: 22px; 
+font-weight: bold; 
+}
+
+.footer-txt {
+font-size: 16px; /* Tamaño del título */
+font-weight: normal;
+color: #ffffff;
+text-decoration: none;
+}
+
+.image-search {
+    width: 1;
 }

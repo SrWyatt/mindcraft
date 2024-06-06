@@ -1,0 +1,23 @@
+/* mindcraftweb/static/css/style.css */
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+.card-header {
+    background-color: #564387;
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.btn-primary {
+    background-color: #564387;
+    border-color: #564387;
+}
+
+.rounded-circle {
+    border: 2px solid #564387;
+}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Mindcraft{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<style>
+    .modal-header {
+        background-color: #343a40;
+        color: #fff;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header text-center">
+            <h1>Perfil de {{ profile.user.username }}</h1>
+        </div>
+        <div class="card-body">
+            <div class="text-center mb-3">
+                <img src="{{ profile.image.url }}" alt="Imagen de perfil" class="rounded-circle" style="width:150px;height:150px;">
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Nombre:</strong> {{ profile.user.username }}</li>
+                <li class="list-group-item"><strong>Fecha de nacimiento:</strong> {{ profile.birthdate }}</li>
+                <li class="list-group-item"><strong>Biografía:</strong> {{ profile.bio }}</li>
+            </ul>
+            <div class="text-center mt-3">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editProfileModal">Editar perfil</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProfileModalLabel">Editar perfil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+{%endblock%}

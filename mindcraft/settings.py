@@ -32,13 +32,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'mindcraftweb.apps.MindcraftwebConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mindcraftweb'
+    
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Directorios adicionales donde Django buscará archivos estáticos
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'mindcraftweb/static'),)
+
+# Archivos de medios (Subidas de usuarios, etc.)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

@@ -14,15 +14,19 @@
         {% if user.is_authenticated %}
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Buscar...">
-            <div class="search-icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/2319/2319177.png" alt="Search Icon">
-            </div>
         </div>
         <div class="navbar-links">
-            <div class="navbar-link-box">
-                <a href="{% url 'logout' %}" class="navbar-link">{{ user.username }}</a>
+            <div class="navbar-link-box dropdown">
+                <a href="#" class="navbar-link dropdown-toggle">{{ user.username }}</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'feed'%}">inicio</a>
+                    <a href="{% url 'profile' user.username %}">Perfil</a>
+                    <a href="#">Cursos inscritos</a>
+                    <a href="#">Más</a>
+                    <a href="{% url 'logout' %}">Cerrar sesión</a>
+                </div>
             </div>
-            <div class="invisible-spacer"></div><div class="invisible-spacer"></div>
+            <div class="invisible-spacer"></div>
         </div>
         {% else %}
         <div class="navbar-links">
@@ -31,29 +35,21 @@
             </div>
             <div class="navbar-link-box">
                 <a href="{% url 'register' %}" class="navbar-link">Registrarme</a>
-                <!--todas las paginas estaran en la carpeta PAGES-->
                 <div class="invisible-spacer"></div>
             </div>
             <div class="invisible-spacer"></div>
-
-            
-                
         </div>
         {% endif %}
-
     </div>
 
     {% if messages %}
     {% for message in messages %}
     <div class="notification {{ message.tags }}">
         {{ message }}
-
     </div>
     {% endfor %}
     {% endif %}
     {% block content %}
     {% endblock %}
-
-    
 </body>
 </html>

@@ -26,6 +26,7 @@
     transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
     text-align: center;
+    position: relative; /* Añadido para el dropdown */
 }
 
 .navbar-link {
@@ -51,13 +52,13 @@
 
 .search-bar {
     flex-grow: 1;
-    margin: 0 12%; /* Ajuste del margen para que la barra se maneje por width */
+    margin: 0 12%;
     position: relative;
-    display: flex; /* Agregamos display flex para que los elementos internos se alineen correctamente */
+    display: flex;
 }
 
 .search-input {
-    width: 100%; /* Ancho del input */
+    width: 100%;
     padding: 10px 10px;
     border: 2px solid #564387;
     border-radius: 30px;
@@ -73,7 +74,7 @@
 .search-icon {
     position: absolute;
     top: 50%;
-    right: 10px; /* Posicionamos el icono a 10px del borde derecho */
+    right: 10px;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -81,4 +82,40 @@
 .search-icon img {
     width: 20px;
     height: auto;
+}
+
+/* Dropdown menu styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle::after {
+    content: ' ▼';
+    font-size: 0.7em;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
