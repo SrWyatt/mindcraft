@@ -59,7 +59,7 @@ def logout_view(request):
     # Vista para cerrar la sesión del usuario.
     logout(request)
     return redirect('index')
-
+@login_required
 def feeed (request):
     users = User.objects.all()  # Asumiendo que tienes una lista de usuarios
     return render(request, 'feed.html', {'users': users})
