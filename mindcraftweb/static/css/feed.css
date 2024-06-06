@@ -1,17 +1,13 @@
-body {
-    font-family: Arial, sans-serif;
+.carousel-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+    margin-bottom: 40px;
 }
 
 .carousel {
     position: relative;
-    width: 80%;
-    max-width: 800px;
+    width: 80%; /* Cambia esto a 100% */
+    max-width: 800px; /* Ajusta este valor según sea necesario */
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);

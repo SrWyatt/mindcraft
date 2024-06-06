@@ -1,67 +1,79 @@
 {% extends 'base.html' %}
 
+
+
 {% block title %}Mindcraft{% endblock %}
 
 {% block content %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/feed.css' %}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-
-
-    <div class="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{% static 'images/art.png' %}" alt="Imagen 1">
-                <a href="#" class="btn">Ver docentes</a>
+<div align="center">
+    <h2>Cursos mejores valorados</h2>
+</div>
+    <div class="carousel-container">
+        <div class="carousel" id="cursos-carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'images/art.png' %}" alt="Imagen 1">
+                    <a href="#" class="btn">Ver docentes</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/ciencia.png' %}" alt="Imagen 2">
+                    <a href="#" class="btn">Ver docentes</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/ingles.png' %}" alt="Imagen 3">
+                    <a href="#" class="btn">Ver docentes</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cdn.discordapp.com/attachments/939691104264138853/1247663467431854091/ciencia.png?ex=66622a27&is=6660d8a7&hm=70a65c6e73a427d4341cb45c16af47d2de7f39aa9f7910f8bf14cb73694373ec&" alt="Imagen 4">
+                    <a href="#" class="btn">Ver docentes</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cdn.discordapp.com/attachments/939691104264138853/1247663468174376960/ingles.png?ex=66622a27&is=6660d8a7&hm=9168b6d7611509e26ee23fae0aaffb68fcbee919bba77d1d8d2c736242b2c35f&" alt="Imagen 5">
+                    <a href="#" class="btn">Ver docentes</a>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="https://cdn.discordapp.com/attachments/939691104264138853/1247661025386299562/math.png?ex=666227e0&is=6660d660&hm=65e54652bfb7ffbc68b3317864760f3d14d5cec69e466d4f1d50f73ad8df1fa3&" alt="Imagen 2">
-                <a href="#" class="btn">Ver docentes</a>
-            </div>
-            <div class="carousel-item">
-                <img src="https://cdn.discordapp.com/attachments/939691104264138853/1247663466853175457/musica.png?ex=66622a26&is=6660d8a6&hm=df6d79d039b6c341357474c5061ecbef1daedeaeaf89a2756f835dfb9f2e1518&" alt="Imagen 3">
-                <a href="#" class="btn">Ver docentes</a>
-            </div>
-            <div class="carousel-item">
-                <img src="https://cdn.discordapp.com/attachments/939691104264138853/1247663467431854091/ciencia.png?ex=66622a27&is=6660d8a7&hm=70a65c6e73a427d4341cb45c16af47d2de7f39aa9f7910f8bf14cb73694373ec&" alt="Imagen 4">
-                <a href="#" class="btn">Ver docentes</a>
-            </div>
-            <div class="carousel-item">
-                <img src="https://cdn.discordapp.com/attachments/939691104264138853/1247663468174376960/ingles.png?ex=66622a27&is=6660d8a7&hm=9168b6d7611509e26ee23fae0aaffb68fcbee919bba77d1d8d2c736242b2c35f&" alt="Imagen 5">
-                <a href="#" class="btn">Ver docentes</a>
-            </div>
+            <a class="prev" onclick="prevSlide('cursos-carousel')">&#10094;</a>
+            <a class="next" onclick="nextSlide('cursos-carousel')">&#10095;</a>
         </div>
-        <a class="prev" onclick="prevSlide()">&#10094;</a>
-        <a class="next" onclick="nextSlide()">&#10095;</a>
     </div>
-    <script>let currentIndex = 0;
-
-function showSlide(index) {
-    const slides = document.querySelectorAll('.carousel-item');
-    if (index >= slides.length) {
-        currentIndex = 0;
-    } else if (index < 0) {
-        currentIndex = slides.length - 1;
-    } else {
-        currentIndex = index;
-    }
-    const offset = -currentIndex * 100;
-    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
-}
-
-function nextSlide() {
-    showSlide(currentIndex + 1);
-}
-
-function prevSlide() {
-    showSlide(currentIndex - 1);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    showSlide(currentIndex);
-});
-</script>
-
-
+<div align="center">
+    <h2>Docentes mejor valorados</h2>
+</div>
+    <div class="carousel-container">
+        <div class="carousel" id="docentes-carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'images/perfil.png' %}" alt="Imagen 1">
+                    <a href="#" class="btn">Ir al perfil</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/perfil.png' %}" alt="Imagen 2">
+                    <a href="#" class="btn">Ir al perfil</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/perfil.png' %}" alt="Imagen 3">
+                    <a href="#" class="btn">Ir al perfil</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/perfil.png' %}" alt="Imagen 4">
+                    <a href="#" class="btn">Ir al perfil</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/perfil.png' %}" alt="Imagen 5">
+                    <a href="#" class="btn">Ir al perfil</a>
+                </div>
+            </div>
+            <a class="prev" onclick="prevSlide('docentes-carousel')">&#10094;</a>
+            <a class="next" onclick="nextSlide('docentes-carousel')">&#10095;</a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <script src="{% static 'js/carousel.js' %}"></script>
 
 {% endblock %}
